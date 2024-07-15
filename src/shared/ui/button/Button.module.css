@@ -1,0 +1,31 @@
+.Button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 30px;
+}
+
+.Button:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+
+.Button:active {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #fff;
+}
+
+.white {
+  background-color: #fff;
+  color: #3a76d0;
+}
+
+.transparent {
+  background-color: transparent;
+  color: #fff;
+}

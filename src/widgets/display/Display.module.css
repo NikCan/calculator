@@ -1,0 +1,19 @@
+.Display {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.Display .history {
+  font-size: 16px;
+}
+
+.Display .history::before {
+  content: "\00a0";
+}
+
+.Display .input {
+  font-size: 32px;
+}

@@ -1,0 +1,40 @@
+.CalculatorPage {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to bottom right, #ffa1a1, #ff7b7b);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.CalculatorPage .card {
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+}
+
+.CalculatorPage .calculator { 
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom right, #29528f, #3a76d0);
+  border-radius: 16px;
+  box-shadow: 0 8px 16px #3a76d0;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 16px;
+  padding-top: 64px;
+}
+
+@media (max-width: 500px) {
+  .CalculatorPage .calculator {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    left: 0;
+    border-radius: 0;
+    width: 100vw;
+  }
+}
