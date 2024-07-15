@@ -11,6 +11,12 @@ export const Button: FC<ButtonProps> = memo(
     return (
       <button
         className={classNames(s.Button, {}, [className, s[theme]])}
+        onTouchEnd={(e) => {
+          if ('vibrate' in navigator) {
+            navigator.vibrate(80);
+          }
+          restProps?.onTouchEnd?.(e);
+        }}
         {...restProps}
       >
         {children}
