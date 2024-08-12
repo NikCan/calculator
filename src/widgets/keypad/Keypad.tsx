@@ -28,6 +28,8 @@ export const Keypad: FC<KeypadProps> = memo(
 
     return (
       <div className={classNames(s.Keypad, {}, [className])}>
+        <div></div>
+        <div></div>
         {calculatorConfig.map((el) => {
           return (
             <Button

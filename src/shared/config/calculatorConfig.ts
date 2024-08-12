@@ -1,4 +1,6 @@
 export const calculatorConfig: IButton[] = [
+  { value: '(', title: '(', action: 'ADD' },
+  { value: ')', title: ')', action: 'ADD' },
   { value: 'C', title: 'C', action: 'CLEAR' },
   { value: '^0.5', title: '√', action: 'ADD' },
   { value: '%', title: '%', action: 'ADD' },

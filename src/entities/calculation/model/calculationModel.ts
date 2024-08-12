@@ -25,7 +25,6 @@ function applyOperation(
   right: number,
   operator: OperationType
 ): number {
-  console.log(left, right, operator);
   switch (operator) {
     case '+':
       return left + right;
@@ -63,7 +62,20 @@ export function calculate(expression: string): number | string {
         continue;
       }
 
-      if (isOperator(char)) {
+      if (char === '(') {
+        operators.push(char as OperationType);
+      } else if (char === ')') {
+        while (
+          operators.length > 0 &&
+          operators[operators.length - 1] !== '('
+        ) {
+          const right = values.pop()!;
+          const left = values.pop()!;
+          const op = operators.pop()!;
+          values.push(applyOperation(left, right, op));
+        }
+        operators.pop(); // Pop the '('
+      } else if (isOperator(char)) {
         // Check if '-' is a negative sign or operator
         if (char === '-' && (i === 0 || isOperator(expression[i - 1]))) {
           // Negative sign handling
@@ -104,7 +116,9 @@ export function calculate(expression: string): number | string {
         while (
           i < expression.length &&
           !isOperator(expression[i]) &&
-          expression[i] !== ' '
+          expression[i] !== ' ' &&
+          expression[i] !== '(' &&
+          expression[i] !== ')'
         ) {
           num += expression[i];
           i++;

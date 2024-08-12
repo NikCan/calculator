@@ -1,3 +1,16 @@
-export const operations: OperationType[] = ['+', '-', '*', '/', '^', '%'];
+export const operations: OperationType[] = [
+  '+',
+  '-',
+  '*',
+  '/',
+  '^',
+  '%',
+  '(',
+  ')'
+];
 
-export type OperationType = '+' | '-' | '*' | '/' | '^' | '%';
+export const operationsWithoutBrackets = operations.filter(
+  (el) => el !== '(' && el !== ')'
+);
+
+export type OperationType = '+' | '-' | '*' | '/' | '^' | '%' | '(' | ')';

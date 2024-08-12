@@ -8,6 +8,9 @@
 
 .Display .history {
   font-size: 16px;
+  width: 100%;
+  word-wrap: break-word; /* Ensures long words break to the next line */
+  text-align: right;
 }
 
 .Display .history::before {
@@ -16,4 +19,8 @@
 
 .Display .input {
   font-size: 32px;
+  width: 100%; /* Ensures input takes full width and can wrap */
+  word-wrap: break-word; /* Ensures long words break to the next line */
+  white-space: pre-wrap; /* Maintains whitespace and line breaks */
+  text-align: right;
 }
