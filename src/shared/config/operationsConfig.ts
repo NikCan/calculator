@@ -13,4 +13,5 @@ export const operationsWithoutBrackets = operations.filter(
   (el) => el !== '(' && el !== ')'
 );
 
-export type OperationType = '+' | '-' | '*' | '/' | '^' | '%' | '(' | ')';
+export type OperationWithoutBracketsType = '+' | '-' | '*' | '/' | '^' | '%';
+export type OperationType = OperationWithoutBracketsType | '(' | ')';

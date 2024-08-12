@@ -1,6 +1,5 @@
 import {
-  OperationType,
-  operations,
+  OperationWithoutBracketsType,
   operationsWithoutBrackets
 } from '@/shared/config';
 
@@ -31,8 +30,10 @@ export class InputValidator {
 
   private isConsecutiveOperation(char: string, lastChar?: string): boolean {
     return (
-      operationsWithoutBrackets.includes(lastChar as OperationType) &&
-      operationsWithoutBrackets.includes(char as OperationType)
+      operationsWithoutBrackets.includes(
+        lastChar as OperationWithoutBracketsType
+      ) &&
+      operationsWithoutBrackets.includes(char as OperationWithoutBracketsType)
     );
   }
 
@@ -41,7 +42,9 @@ export class InputValidator {
     lastChar?: string
   ): boolean {
     return (
-      (operationsWithoutBrackets.includes(char as OperationType) ||
+      (operationsWithoutBrackets.includes(
+        char as OperationWithoutBracketsType
+      ) ||
         char === ')') &&
       lastChar === '('
     );
