@@ -142,7 +142,7 @@ export function calculate(expression: string): number | string {
       values.push(applyOperation(left, right, op));
     }
 
-    return values.pop()!;
+    return +values.pop()!.toFixed(10);
   } catch (error) {
     console.log((error as any).message);
     return 'Error';
